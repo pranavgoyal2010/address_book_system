@@ -1,112 +1,55 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AddressBookMain {
     public static void main(String[] args){
-        ArrayList<Address> addressBook = new ArrayList<>();
 
+
+        AddressBook addressBook = new AddressBook();
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter first name ");
-        String firstName = sc.nextLine();
-        System.out.println("Enter last name ");
-        String lastName = sc.nextLine();
-        System.out.println("Enter address ");
-        String address = sc.nextLine();
-        System.out.println("Enter city ");
-        String city = sc.nextLine();
-        System.out.println("Enter Phone number ");
-        String phNumber = sc.nextLine();
-        System.out.println("Enter email ");
-        String email = sc.nextLine();
-        System.out.println("Enter zip ");
-        int zip = sc.nextInt();
 
-        addressBook.add(new Address(firstName, lastName, address, city, zip, phNumber, email));
+        System.out.println("WELCOME TO ADDRESS BOOK SYSTEM");
 
-        for(int i=0; i< addressBook.size(); i++)
-        {
-            System.out.println(addressBook.get(i));
-        }
+        System.out.println("ENTER " + "\n" +
+                "1. FOR ADDING TO BOOK" + "\n" +
+                "2. FOR EDITING CONTACT IN BOOK" + "\n" +
+                "3. FOR DELETING CONTACT IN BOOK" + "\n" +
+                "4. FOR DISPLAYING CONTENT OF BOOK" + "\n" +
+                "5. TO EXIT");
+
+        int choice = sc.nextInt();
         sc.nextLine();
-        System.out.println("Enter first name to edit details.");
-        firstName = sc.next();
 
-        sc.nextLine();
-        Address record = null;
-        for(int i=0; i< addressBook.size(); i++)
+        while(choice!=5)
         {
-            if(addressBook.get(i).getFirstName().equals(firstName))
-            {
-                record = addressBook.get(i);
-                break;
+            switch (choice){
+                case 1:
+                    addressBook.addContact();
+                    break;
+                case 2:
+                    System.out.println("Enter first name to edit details.");
+                    String firstName = sc.nextLine();
+                    addressBook.editContact(firstName);
+                    break;
+                case 3:
+                    System.out.println("Enter first name to delete record.");
+                    firstName = sc.nextLine();
+                    addressBook.deleteContact(firstName);
+                    break;
+                default:
+                    addressBook.display();
             }
-        }
 
-        if(record==null)
-            System.out.println("No such record exists");
-        else
-        {
-            System.out.println("Enter field to edit");
-            String field = sc.next();
+            System.out.println("ENTER " + "\n" +
+                    "1. FOR ADDING TO BOOK" + "\n" +
+                    "2. FOR EDITING CONTACT IN BOOK" + "\n" +
+                    "3. FOR DELETING CONTACT IN BOOK" + "\n" +
+                    "4. FOR DISPLAYING CONTENT OF BOOK" + "\n" +
+                    "5. TO EXIT");
+
+            choice = sc.nextInt();
             sc.nextLine();
-            if(field.equals("address"))
-            {
-                System.out.print("Enter new address ");
-                record.setAddress(sc.nextLine());
-            }
-            else if(field.equals("city"))
-            {
-                System.out.print("Enter new city ");
-                city = sc.nextLine();
-                record.setCity(city);
-            }
-            else if(field.equals("phNumber"))
-            {
-                System.out.print("Enter new phone number ");
-                record.setPhNumber(sc.nextLine());
-            }
-            else if(field.equals("email"))
-            {
-                System.out.print("Enter new email ");
-                record.setEmail(sc.nextLine());
-            }
-            else if(field.equals("zip"))
-            {
-                System.out.print("Enter new zip ");
-                record.setZip(sc.nextInt());
-            }
-            else
-            {
-                System.out.println("Invalid field.");
-            }
-
-            System.out.println(record);
         }
 
 
-        System.out.println("Enter first name to delete record.");
-        firstName = sc.nextLine();
-
-
-        record = null;
-        for(int i=0; i< addressBook.size(); i++)
-        {
-            if(addressBook.get(i).getFirstName().equals(firstName))
-            {
-                record = addressBook.get(i);
-                addressBook.remove(i);
-                break;
-            }
-        }
-
-        if(record==null)
-        {
-            System.out.println("No such record. Delete Unsuccessful.");
-        }
-        else
-        {
-            System.out.println("Delete successful.");
-        }
-        
     }
 }
