@@ -27,5 +27,60 @@ public class AddressBookMain {
         {
             System.out.println(addressBook.get(i));
         }
+        sc.nextLine();
+        System.out.println("Enter first name to edit details.");
+        String fName = sc.next();
+
+        sc.nextLine();
+        Address record = null;
+        for(int i=0; i< addressBook.size(); i++)
+        {
+            if(addressBook.get(i).getFirstName().equals(fName))
+            {
+                record = addressBook.get(i);
+                break;
+            }
+        }
+
+        if(record==null)
+            System.out.println("No such record exists");
+        else
+        {
+            System.out.println("Enter field to edit");
+            String field = sc.next();
+            sc.nextLine();
+            if(field.equals("address"))
+            {
+                System.out.print("Enter new address ");
+                record.setAddress(sc.nextLine());
+            }
+            else if(field.equals("city"))
+            {
+                System.out.print("Enter new city ");
+                city = sc.nextLine();
+                record.setCity(city);
+            }
+            else if(field.equals("phNumber"))
+            {
+                System.out.print("Enter new phone number ");
+                record.setPhNumber(sc.nextLine());
+            }
+            else if(field.equals("email"))
+            {
+                System.out.print("Enter new email ");
+                record.setEmail(sc.nextLine());
+            }
+            else if(field.equals("zip"))
+            {
+                System.out.print("Enter new zip ");
+                record.setZip(sc.nextInt());
+            }
+            else
+            {
+                System.out.println("Invalid field.");
+            }
+
+            System.out.println(record);
+        }
     }
 }
