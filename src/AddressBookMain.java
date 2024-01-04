@@ -29,13 +29,13 @@ public class AddressBookMain {
         }
         sc.nextLine();
         System.out.println("Enter first name to edit details.");
-        String fName = sc.next();
+        firstName = sc.next();
 
         sc.nextLine();
         Address record = null;
         for(int i=0; i< addressBook.size(); i++)
         {
-            if(addressBook.get(i).getFirstName().equals(fName))
+            if(addressBook.get(i).getFirstName().equals(firstName))
             {
                 record = addressBook.get(i);
                 break;
@@ -82,5 +82,31 @@ public class AddressBookMain {
 
             System.out.println(record);
         }
+
+
+        System.out.println("Enter first name to delete record.");
+        firstName = sc.nextLine();
+
+
+        record = null;
+        for(int i=0; i< addressBook.size(); i++)
+        {
+            if(addressBook.get(i).getFirstName().equals(firstName))
+            {
+                record = addressBook.get(i);
+                addressBook.remove(i);
+                break;
+            }
+        }
+
+        if(record==null)
+        {
+            System.out.println("No such record. Delete Unsuccessful.");
+        }
+        else
+        {
+            System.out.println("Delete successful.");
+        }
+        
     }
 }
