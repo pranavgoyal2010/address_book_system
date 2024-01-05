@@ -40,4 +40,14 @@ public class MultipleAddressBook {
             //System.out.println(address);
         }
     }
+
+    public void countOfSameCity(String city)
+    {
+
+        for (Map.Entry<String,AddressBook> entry : addressBooks.entrySet()) {
+            //ArrayList<Address> addresses = new ArrayList<>();
+            System.out.println(entry.getKey());
+            System.out.println(entry.getValue().countOfSameCity(city));
+        }
+    }
 }

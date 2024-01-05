@@ -19,12 +19,13 @@ public class Main {
                 "5. FOR DISPLAYING CONTENT OF A BOOK" + "\n" +
                 "6. TO DISPLAY ALL ADDRESS BOOKS" + "\n" +
                 "7. TO DISPLAY ALL CONTACTS FROM SAME CITY" + "\n" +
-                "8. TO EXIT");
+                "8. TO DISPLAY COUNT OF ALL CONTACTS FROM SAME CITY" + "\n" +
+                "9. TO EXIT");
 
         int choice = sc.nextInt();
         sc.nextLine();
 
-        while(choice!=8)
+        while(choice!=9)
         {
             switch (choice){
                 case 1:
@@ -92,7 +93,8 @@ public class Main {
                     "5. FOR DISPLAYING CONTENT OF A BOOK" + "\n" +
                     "6. TO DISPLAY ALL ADDRESS BOOKS" + "\n" +
                     "7. TO DISPLAY ALL CONTACTS FROM SAME CITY" + "\n" +
-                    "8. TO EXIT");
+                    "8. TO DISPLAY COUNT OF ALL CONTACTS FROM SAME CITY" + "\n" +
+                    "9. TO EXIT");
             
             choice = sc.nextInt();
             sc.nextLine();

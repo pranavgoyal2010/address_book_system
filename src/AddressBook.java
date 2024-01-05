@@ -132,4 +132,15 @@ public class AddressBook {
         return book;
     }
 
+    public int countOfSameCity(String city){
+        //ArrayList<Address> book = new ArrayList<>();
+        int count = 0;
+        for (int i=0; i<addressBook.size(); i++) {
+            Address address = addressBook.get(i);
+            if(address.getCity().equals(city))
+                count++;
+        }
+        return count;
+    }
+
 }
