@@ -32,6 +32,9 @@ public class AddressBook {
 
     public void display()
     {
+        if(addressBook.size()==0)
+            System.out.println("Address book is empty");
+
         for(int i=0; i< addressBook.size(); i++)
         {
             System.out.println(addressBook.get(i));
