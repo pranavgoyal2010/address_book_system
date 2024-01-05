@@ -122,13 +122,14 @@ public class AddressBook {
         }
     }
 
-    public Address displayFromSameCity(String city){
+    public ArrayList<Address> displayFromSameCity(String city){
+        ArrayList<Address> book = new ArrayList<>();
         for (int i=0; i<addressBook.size(); i++) {
             Address address = addressBook.get(i);
             if(address.getCity().equals(city))
-                return address;
+                book.add(address);
         }
-        return null;
+        return book;
     }
 
 }

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,15 +26,18 @@ public class MultipleAddressBook {
 
     public void displayFromSameCity(String city)
     {
+
         for (Map.Entry<String,AddressBook> entry : addressBooks.entrySet()) {
+            //ArrayList<Address> addresses = new ArrayList<>();
             System.out.println(entry.getKey());
             System.out.println(entry.getValue().displayFromSameCity(city));
-            //AddressBook addressBook = entry.getValue();
             /*for (int i=0; i<addressBook.size(); i++) {
                 Address address = addressBook.get(i);
                 if(address.getCity().equals(city))
                     System.out.println(address);
             }*/
+
+            //System.out.println(address);
         }
     }
 }
