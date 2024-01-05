@@ -12,17 +12,18 @@ public class Main {
         System.out.println("WELCOME TO ADDRESS BOOK SYSTEM");
 
         System.out.println("ENTER " + "\n" +
-                "1. FOR CREATING NEW ADDRESS BOOK" + "\n" +
-                "2. FOR ADDING TO A BOOK" + "\n" +
-                "3. FOR EDITING CONTACT IN A BOOK" + "\n" +
+                "1. FOR CREATING A NEW ADDRESS BOOK" + "\n" +
+                "2. FOR ADDING TO AN ADDRESS BOOK" + "\n" +
+                "3. FOR EDITING CONTACT IN AN ADDRESS BOOK" + "\n" +
                 "4. FOR DELETING CONTACT IN A BOOK" + "\n" +
                 "5. FOR DISPLAYING CONTENT OF A BOOK" + "\n" +
-                "6. TO EXIT");
+                "6. TO DISPLAY ALL ADDRESS BOOKS" + "\n" +
+                "7. TO EXIT");
 
         int choice = sc.nextInt();
         sc.nextLine();
 
-        while(choice!=6)
+        while(choice!=7)
         {
             switch (choice){
                 case 1:
@@ -74,16 +75,19 @@ public class Main {
                         break;
                     }
                     addressBook.display();
+                case 6:
+                    multipleBooks.display();
             }
 
             System.out.println("ENTER " + "\n" +
-                    "1. FOR CREATING NEW ADDRESS BOOK" + "\n" +
-                    "2. FOR ADDING TO A BOOK" + "\n" +
-                    "3. FOR EDITING CONTACT IN A BOOK" + "\n" +
+                    "1. FOR CREATING A NEW ADDRESS BOOK" + "\n" +
+                    "2. FOR ADDING TO AN ADDRESS BOOK" + "\n" +
+                    "3. FOR EDITING CONTACT IN AN ADDRESS BOOK" + "\n" +
                     "4. FOR DELETING CONTACT IN A BOOK" + "\n" +
                     "5. FOR DISPLAYING CONTENT OF A BOOK" + "\n" +
-                    "6. TO EXIT");
-
+                    "6. TO DISPLAY ALL ADDRESS BOOKS" + "\n" +
+                    "7. TO EXIT");
+            
             choice = sc.nextInt();
             sc.nextLine();
         }

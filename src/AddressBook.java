@@ -27,7 +27,10 @@ public class AddressBook {
 
         Address newRecord = new Address(firstName, lastName, address, city, zip, phNumber, email);
 
-        addressBook.add(newRecord);
+        if(!addressBook.contains(newRecord))
+            addressBook.add(newRecord);
+        else
+            System.out.println("Duplicate Entry. Address not added.");
     }
 
     public void display()

@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Address {
     private String firstName;
     private String lastName;
@@ -71,6 +73,14 @@ public class Address {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Address address = (Address) o;
+        return Objects.equals(firstName, address.firstName);
     }
 
 

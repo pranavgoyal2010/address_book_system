@@ -15,4 +15,11 @@ public class MultipleAddressBook {
     public AddressBook getBook(String name){
         return addressBooks.get(name);
     }
+
+    public void display(){
+        if(addressBooks.size()==0)
+            System.out.println("Dictionary empty");
+        else
+            System.out.println(addressBooks.keySet());
+    }
 }
