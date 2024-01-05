@@ -22,4 +22,18 @@ public class MultipleAddressBook {
         else
             System.out.println(addressBooks.keySet());
     }
+
+    public void displayFromSameCity(String city)
+    {
+        for (Map.Entry<String,AddressBook> entry : addressBooks.entrySet()) {
+            System.out.println(entry.getKey());
+            System.out.println(entry.getValue().displayFromSameCity(city));
+            //AddressBook addressBook = entry.getValue();
+            /*for (int i=0; i<addressBook.size(); i++) {
+                Address address = addressBook.get(i);
+                if(address.getCity().equals(city))
+                    System.out.println(address);
+            }*/
+        }
+    }
 }

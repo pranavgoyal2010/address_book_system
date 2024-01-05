@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Scanner;
 
 public class AddressBook {
@@ -121,5 +122,13 @@ public class AddressBook {
         }
     }
 
+    public Address displayFromSameCity(String city){
+        for (int i=0; i<addressBook.size(); i++) {
+            Address address = addressBook.get(i);
+            if(address.getCity().equals(city))
+                return address;
+        }
+        return null;
+    }
 
 }

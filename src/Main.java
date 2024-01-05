@@ -18,12 +18,13 @@ public class Main {
                 "4. FOR DELETING CONTACT IN A BOOK" + "\n" +
                 "5. FOR DISPLAYING CONTENT OF A BOOK" + "\n" +
                 "6. TO DISPLAY ALL ADDRESS BOOKS" + "\n" +
-                "7. TO EXIT");
+                "7. TO DISPLAY ALL CONTACTS FROM SAME CITY" + "\n" +
+                "8. TO EXIT");
 
         int choice = sc.nextInt();
         sc.nextLine();
 
-        while(choice!=7)
+        while(choice!=8)
         {
             switch (choice){
                 case 1:
@@ -77,6 +78,10 @@ public class Main {
                     addressBook.display();
                 case 6:
                     multipleBooks.display();
+                case 7:
+                    System.out.println("Enter city");
+                    String city = sc.nextLine();
+                    multipleBooks.displayFromSameCity(city);
             }
 
             System.out.println("ENTER " + "\n" +
@@ -86,7 +91,8 @@ public class Main {
                     "4. FOR DELETING CONTACT IN A BOOK" + "\n" +
                     "5. FOR DISPLAYING CONTENT OF A BOOK" + "\n" +
                     "6. TO DISPLAY ALL ADDRESS BOOKS" + "\n" +
-                    "7. TO EXIT");
+                    "7. TO DISPLAY ALL CONTACTS FROM SAME CITY" + "\n" +
+                    "8. TO EXIT");
             
             choice = sc.nextInt();
             sc.nextLine();
